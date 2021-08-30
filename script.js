@@ -10,6 +10,14 @@ function sendNumberValue(number) {
 
   }
 
+  function addDecimal() {
+   
+    // If no decimal, add one
+    if (!calculatorDisplay.textContent.includes('.')) {
+      calculatorDisplay.textContent = `${calculatorDisplay.textContent}.`;
+    }
+  }
+  
 // Add Event Listeners for numbers, operators, decimal
 inputBtns.forEach((inputBtn) => {
     if (inputBtn.classList.length === 0) {
@@ -20,3 +28,12 @@ inputBtns.forEach((inputBtn) => {
       inputBtn.addEventListener('click', () => addDecimal());
     }
   });
+
+  // Reset all values, display
+function resetAll() {
+    calculatorDisplay.textContent = '0';
+  }
+  
+  // Event Listener
+  clearBtn.addEventListener('click', resetAll);
+  
